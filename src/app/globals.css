@@ -76,6 +76,6 @@
 }
 
 
-/* #page1{
-  transition: color 1s ease-out;
-} */
+body::-webkit-scrollbar{
+  display: none;
+}
