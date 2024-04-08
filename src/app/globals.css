@@ -74,3 +74,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* #page1{
+  transition: color 1s ease-out;
+} */

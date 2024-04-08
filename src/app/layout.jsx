@@ -11,6 +11,9 @@ const fontSans = FontSans({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>Dinners</title>
+      </head>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
         fontSans.variable
