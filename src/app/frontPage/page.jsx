@@ -1,24 +1,46 @@
 "use client";
 import Image from "next/image";
 import mainLogo from "../../imgs/main_150x_1.svg";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function Home() {
   return (
     <main className="overflow-x-hidden" suppressHydrationWarning>
-      
       <nav className="w-full h-[7vh] px-[2vh] fixed top-0 z-10 flex justify-between">
+
         <div className="flex">
-          <button className="w-[1.75vw] p-0 ml-[0.35vw] bg-transparent flex flex-col">
-            <div className="w-full h-[.25vh] mt-[3vh] bg-black"></div>
-            <div className="w-[65%] h-[.25vh] mt-[.75vh] bg-black"></div>
-          </button>
+          
+          <Sheet>
+            <SheetTrigger className="w-[1.75vw] p-0 ml-[0.35vw] bg-transparent flex flex-col">
+                <div className="w-full h-[.25vh] mt-[3vh] bg-black"></div>
+                <div className="w-[65%] h-[.25vh] mt-[.75vh] bg-black"></div>
+            </SheetTrigger>
+            <SheetContent side={"left"}>
+              <SheetHeader>
+                <SheetTitle>Are you absolutely sure?</SheetTitle>
+                <SheetDescription>
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers.
+                </SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
+
           <Image
             src={mainLogo}
             className="w-[8vw] ml-[1.25vw] h-full"
             alt="No image"
           ></Image>
+        
         </div>
-
+ 
         <div
           id="searchAndCart"
           className="mr-[.5vw] flex justify-between gap-2"
@@ -49,7 +71,6 @@ export default function Home() {
               </g>
             </svg>
           </button>
-
         </div>
       </nav>
 
@@ -57,6 +78,7 @@ export default function Home() {
         className="w-full min-h-screen  
                         bg-[url('../imgs/Festive-Banners-1900X1200.webp')] bg-cover bg-center"
       ></div>
+
       <div className="w-full min-h-screen  bg-gradient-to-tr from-zinc-900 to-gray-700"></div>
     </main>
   );
